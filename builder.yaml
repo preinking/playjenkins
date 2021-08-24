@@ -13,9 +13,9 @@ spec:
     image: gcr.io/kaniko-project/executor:debug
     env:
       - name: AWS_ACCESS_KEY_ID
-        value: ""
+        value: "xx"
       - name: AWS_SECRET_ACCESS_KEY
-        value: ""
+        value: "xx"
     command:
     - /busybox/cat
     tty: true

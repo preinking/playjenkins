@@ -19,14 +19,14 @@ pipeline {
             sh '''
             /kaniko/executor --dockerfile `pwd`/Dockerfile \
                              --context `pwd` \
-                             --destination=preinking/myweb:${BUILD_NUMBER}
+                             --destination=quanby/myweb:${BUILD_NUMBER}
             '''
           }
         }
       }
     }
 
-    stage('Deploy App to Kubernetes') {     
+    stage('Deploy App to Kubernetes') {
       steps {
         container('kubectl') {
           withCredentials([file(credentialsId: 'mykubeconfig', variable: 'KUBECONFIG')]) {
@@ -36,6 +36,6 @@ pipeline {
         }
       }
     }
-  
+
   }
 }

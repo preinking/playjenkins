@@ -23,7 +23,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: preinking/myweb:<TAG>
+      - image: quanby/myweb:<TAG>
         imagePullPolicy: Always
         name: myweb
 
